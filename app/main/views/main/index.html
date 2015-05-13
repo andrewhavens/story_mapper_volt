@@ -1,0 +1,36 @@
+<:Title>
+  Home
+
+<:Body>
+  <h1>Home</h1>
+
+  <table id="grid" height="100%">
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+      {{ _cards.each do |card| }}
+        <td>
+          <ul class="column">
+            <li class="card"><textarea>item 1</textarea></li>
+            <li class="card">item 2</li>
+            <li class="card">item 3</li>
+          </ul>
+        </td>
+        <td>
+          <ul class="column">
+            <li class="card">cat</li>
+            <li class="card">dog</li>
+            <li class="card">fish</li>
+          </ul>
+        </td>
+      {{ end }}
+    </tr>
+  </table>
+
+  <form e-submit="add_card" role="form">
+    <div class="form-group">
+      <label>New Card</label>
+      <input class="form-control" type="text" value="{{ page._new_card }}" />
+    </div>
+  </form>
